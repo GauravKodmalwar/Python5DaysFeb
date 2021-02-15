@@ -1,8 +1,11 @@
 import os, time, datetime
 
 for _, directories, files in os.walk('./Data'):
-    for file in files:
-        print(file, directories)
+    for dir in directories:
+        for _,dirs,files2 in os.walk('./Data/' + dir):
+            print(files2, dirs)
+    #for file in files:
+    #    print(file, directories)
 
 # Create directories ('Monday', 'Tuesday',....)
 # Create files

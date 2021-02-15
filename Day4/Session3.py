@@ -81,7 +81,24 @@ class Prepaid(Customer):
     def getPrepaidDetails(self):
         return self.getCustomerDetails(), self.__varPrepaidPlanType, self.__varPrepadISDN, self.__varPrepaidValidty
 
+    def getCustomerDetails(self, *args): # Overriden - customization function
+        status = ''
+        for num in args:
+            if type(num) is float:
+                status = "Prepaid bill is paid"
+            else:
+                status = "Prepaid bill is not paid"
+        number = '91-' + str(self.__varPrepadISDN)
+        return super(Prepaid, self).getCustomerDetails(), number, status
+
+    #def getCustomerDetails(self, var1): Overloading is not possible
+    #    return "Overloaded function"
 prepaid1 = Prepaid('Gaurav', 'M', 30, 'Mumbai, MH', 9872494737, 15, 'Family')
 print(prepaid1.getPrepaidDetails())
+print(prepaid1.getCustomerDetails(10))
+print(prepaid1.getCustomerDetails(10.6))
 print(prepaid1.getCustomerDetails())
-
+print(isinstance(prepaid1, Prepaid))
+print(isinstance(prepaid1, Customer))
+print(isinstance(varCustomer, Prepaid))
+print(issubclass(Prepaid, Customer))

@@ -9,10 +9,10 @@ import requests
 def myFunction():
     try:
         news = requests.get('https://timesofindia.indiatimes.com/india/how-modi-made-it-ministry-burn-the-midnight-oil-to-ban-chinese-apps/articleshow/80889692.cms')
-        print(news.text)
+        #print(news.text)
         var1 = 10
         var2 = 0
-        assert 1==0, 'Not a valid scenario' # assert boolen statement, message (optional)
+        assert 1==1, 'Not a valid scenario' # assert boolen statement, message (optional)
         if True != False:
             raise FileNotFoundError("File is wrong")
         assert 2==9, 'File is not correct'

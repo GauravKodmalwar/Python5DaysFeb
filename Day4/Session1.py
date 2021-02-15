@@ -6,7 +6,8 @@ file = open('./Data/newsData', 'r')
 reader = file.read()
 file.seek(4)
 #print(file.readline()) # '\n'
-#file2 = open('./Data/FileOutput_' + '.txt', 'w')
+#file2 = open('./Data/FileOutput_' + '.txt', 'w') # b ==> binary
+#file2 = open('./Data/FileOutput_' + '.txt', 'a')
 file2 = open('./Data/FileOutput_' + '.txt', 'w')
 file2.write(file.readline())
 file2.seek(0)
